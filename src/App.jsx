@@ -3,6 +3,10 @@ import { getSopranosCharacters } from "./api.jsx";
 import CharacterCard from "./components/Card.jsx";
 import "./App.css";
 
+function receiverIds(id) {
+  console.log("the following id was clicked " + id);
+}
+
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +23,7 @@ export default function App() {
   return (
     <ul className="characters-grid">
       {characters.map((c) => (
-        <CharacterCard key={c.id} character={c} />
+        <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
       ))}
     </ul>
   );
