@@ -3,13 +3,20 @@ import { getSopranosCharacters } from "./api.jsx";
 import CharacterCard from "./components/Card.jsx";
 import "./App.css";
 
-function receiverIds(id) {
-  console.log("the following id was clicked " + id);
-}
-
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ids, setIds] = useState(new Set());
+
+  function receiverIds(id) {
+    console.log("the following id was clicked " + id);
+    if (ids.has(id)) {
+      const next = new Set();
+      setIds(next);
+    } else {
+      setIds((prev) => new Set(prev).add(id));
+    }
+  }
 
   useEffect(() => {
     getSopranosCharacters()
