@@ -7,16 +7,7 @@ export default function App() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ids, setIds] = useState(new Set());
-
-  function receiverIds(id) {
-    console.log("the following id was clicked " + id);
-    if (ids.has(id)) {
-      const next = new Set();
-      setIds(next);
-    } else {
-      setIds((prev) => new Set(prev).add(id));
-    }
-  }
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     getSopranosCharacters()
@@ -27,11 +18,32 @@ export default function App() {
 
   if (loading) return <p>Loading...</p>;
 
+  let score = ids.size;
+  let prospectiveScore = score + 1;
+
+  function receiverIds(id) {
+    console.log("the following id was clicked " + id);
+    if (ids.has(id)) {
+      const next = new Set();
+      setIds(next);
+    } else {
+      setIds((prev) => new Set(prev).add(id));
+      if (prospectiveScore > bestScore) {
+        setBestScore(prospectiveScore);
+      }
+    }
+  }
+
   return (
-    <ul className="characters-grid">
-      {characters.map((c) => (
-        <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
-      ))}
-    </ul>
+    <>
+      <p>
+        Score : {score} - Best Score : {bestScore}
+      </p>
+      <ul className="characters-grid">
+        {characters.map((c) => (
+          <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
+        ))}
+      </ul>
+    </>
   );
 }
