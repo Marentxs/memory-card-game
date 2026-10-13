@@ -20,6 +20,15 @@ export default function App() {
 
   let score = ids.size;
   let prospectiveScore = score + 1;
+  const copy = [...characters];
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
   function receiverIds(id) {
     console.log("the following id was clicked " + id);
@@ -32,6 +41,7 @@ export default function App() {
         setBestScore(prospectiveScore);
       }
     }
+    setCharacters(shuffleArray(copy));
   }
 
   return (
