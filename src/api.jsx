@@ -33,6 +33,7 @@ export async function getSopranosCharacters() {
     .filter((c) => c.image)
     .slice(0, 14)
     .map((c) => ({
+      id: c.id,
       name: c.name,
       imageUrl: c.image.startsWith("http")
         ? c.image

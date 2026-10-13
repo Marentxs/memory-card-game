@@ -1,6 +1,6 @@
-// src/App.jsx
 import { useEffect, useState } from "react";
 import { getSopranosCharacters } from "./api.jsx";
+import CharacterCard from "./components/Card.jsx";
 import "./App.css";
 
 export default function App() {
@@ -19,10 +19,7 @@ export default function App() {
   return (
     <ul className="characters-grid">
       {characters.map((c) => (
-        <li key={c.name} className="character-card">
-          <img src={c.imageUrl} alt={c.name} />
-          <p>{c.name}</p>
-        </li>
+        <CharacterCard key={c.id} character={c} />
       ))}
     </ul>
   );
