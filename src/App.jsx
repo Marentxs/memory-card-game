@@ -20,7 +20,6 @@ export default function App() {
 
   let score = ids.size;
   let prospectiveScore = score + 1;
-  const copy = [...characters];
 
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -31,7 +30,7 @@ export default function App() {
   }
 
   function receiverIds(id) {
-    console.log("the following id was clicked " + id);
+    const copy = [...characters];
     if (ids.has(id)) {
       const next = new Set();
       setIds(next);
@@ -54,6 +53,7 @@ export default function App() {
           <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
         ))}
       </ul>
+      <p>{ids.size === 12 && <span> You won this round!</span>}</p>
     </>
   );
 }
