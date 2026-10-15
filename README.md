@@ -1,16 +1,46 @@
-# React + Vite
+# Sopranos Memory Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="assets/live-preview.png" width="700" alt="Memory card game preview">
+</p>
 
-Currently, two official plugins are available:
+A memory card game built with React that uses [TheTVDB API](https://thetvdb.com/series/the-sopranos#castcrew) to fetch images of 12 different Sopranos characters. The goal is to click every card exactly once, but the cards shuffle after each click, so you have to remember what you've already clicked.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project focuses on React hooks, state management, and consuming data from an external API. It is part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Fetches 12 unique Sopranos character images from TheTVDB API
+- Cards shuffle randomly after every click
+- Score tracking with best score saved across rounds
+- Win / lose detection with a victory message
+- Responsive grid layout
+- Retro arcade-inspired styling
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (hooks: `useState`, `useEffect`)
+- JavaScript (ES6+)
+- HTML & CSS (Flexbox, Grid, custom properties)
+- TheTVDB API
+- Vite
+
+## What I Learned
+
+- Managing state with React hooks (`useState`, `useEffect`)
+- Fetching and handling data from an external API
+- Conditional rendering and event handling in React
+- Preventing duplicate clicks and detecting game-over conditions
+- Shuffling arrays without mutating state
+
+## How to Play
+
+1. Click any card to reveal it and earn a point.
+2. The cards shuffle after every click.
+3. Click a card you've already picked and the game ends.
+4. Click all 12 cards exactly once to win.
+
+## Credits
+
+- Character images from [TheTVDB](https://thetvdb.com/series/the-sopranos#castcrew)
+- Project idea from [The Odin Project](https://www.theodinproject.com/)
