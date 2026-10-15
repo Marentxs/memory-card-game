@@ -45,15 +45,48 @@ export default function App() {
 
   return (
     <>
-      <p>
-        Score : {score} - Best Score : {bestScore}
-      </p>
+      <header className="title-block">
+        <h1 className="game-title">The Sopranos</h1>
+        <p className="game-subtitle">Card Game</p>
+      </header>
+
+      <div className="scoreboard">
+        <div className="score-item">
+          <span className="score-label">Score </span>
+          <span className="score-value">{score}</span>
+        </div>
+        <div className="score-divider" />
+        <div className="score-item">
+          <span className="score-label">Best </span>
+          <span className="score-value">{bestScore}</span>
+        </div>
+      </div>
+
       <ul className="characters-grid">
         {characters.map((c) => (
           <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
         ))}
       </ul>
-      <p>{ids.size === 12 && <span> You won this round!</span>}</p>
+
+      <p>
+        {ids.size === 12 && (
+          <span className="win-message">You won this round!</span>
+        )}
+      </p>
+
+      <div id="footer">
+        <a
+          href="https://www.theodinproject.com/lessons/node-path-react-new-memory-card"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>The Odin Project</span>
+        </a>
+        <span> - </span>
+        <a href="https://github.com/Marentxs" target="_blank" rel="noreferrer">
+          <span>My github</span>
+        </a>
+      </div>
     </>
   );
 }
