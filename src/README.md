@@ -1,5 +1,9 @@
 # Sopranos Memory Card
 
+<p align="center">
+  <img src="assets/live-preview.png" width="700" alt="Memory card game preview">
+</p>
+
 A memory card game built with React that uses [TheTVDB API](https://thetvdb.com/series/the-sopranos#castcrew) to fetch images of 12 different Sopranos characters. The goal is to click every card exactly once, but the cards shuffle after each click, so you have to remember what you've already clicked.
 
 This project focuses on React hooks, state management, and consuming data from an external API. It is part of [The Odin Project](https://www.theodinproject.com/) curriculum.
