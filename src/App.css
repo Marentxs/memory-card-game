@@ -124,6 +124,7 @@ body::before {
 
 .character-card:hover {
   transform: scale(1.03);
+  cursor: pointer;
   box-shadow:
     0 0 22px rgba(71, 230, 255, 0.55),
     0 0 40px rgba(255, 59, 59, 0.35);
