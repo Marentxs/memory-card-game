@@ -1,5 +1,7 @@
 # Sopranos Memory Card
 
+Live Demo: https://memory-card-game-sopranos.netlify.app
+
 <p align="center">
   <img src="src/assets/live-preview.PNG" width="700" alt="Memory card game preview">
 </p>
