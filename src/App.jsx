@@ -48,6 +48,9 @@ export default function App() {
       <header className="title-block">
         <h1 className="game-title">The Sopranos</h1>
         <p className="game-subtitle">Card Game</p>
+        <p className="game-instructions">
+          Click all 12 characters without clicking the same one twice!
+        </p>
       </header>
 
       <div className="scoreboard">
