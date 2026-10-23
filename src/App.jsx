@@ -49,7 +49,21 @@ export default function App() {
         <h1 className="game-title">The Sopranos</h1>
         <p className="game-subtitle">Card Game</p>
         <p className="game-instructions">
-          Click all 12 characters without clicking the same one twice!
+          Click all 14 characters without clicking the same one twice!
+        </p>
+        <p>
+          {ids.size === 14 && (
+            <div className="win-message win-sopranos">
+              <span className="made-icon">♠</span>
+              <h2>You're Made.</h2>
+              <div className="win-divider" />
+              <p>
+                14 characters. No mistakes.
+                <br />
+                You're part of the family.
+              </p>
+            </div>
+          )}
         </p>
       </header>
 
@@ -70,12 +84,6 @@ export default function App() {
           <CharacterCard key={c.id} character={c} onSelect={receiverIds} />
         ))}
       </ul>
-
-      <p>
-        {ids.size === 12 && (
-          <span className="win-message">You won this round!</span>
-        )}
-      </p>
 
       <div id="footer">
         <a
